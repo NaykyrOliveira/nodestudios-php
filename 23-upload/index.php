@@ -14,6 +14,7 @@
 </head>
 <body>
     <?php
+// $_FILES
         if (isset($_POST['enviar-formulario'])) {
             $formatosPermitidos = array("png", "jpg", "jpeg", "gif");
             $extensao = pathinfo($_FILES['arquivo']['name'], PATHINFO_EXTENSION);

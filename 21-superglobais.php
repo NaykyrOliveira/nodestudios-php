@@ -25,7 +25,6 @@
 // retorna o endereço IP de onde o usuário está visualizando a página.
     echo "<hr>";
 // $_REQUEST
-// $_FILES
 // $_ENV
 // $_COOKIE
 // $_SESSION

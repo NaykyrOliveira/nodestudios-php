@@ -27,4 +27,4 @@
 // $_REQUEST
 // $_ENV
 // $_COOKIE
-// $_SESSION
+

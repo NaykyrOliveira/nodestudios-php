@@ -20,3 +20,21 @@
 // Criptografia SHA1 (mão única só criptografa)
 // Autenticação com SHA1 é feita da mesma forma que o MD5
     echo "Sha1: ".sha1($senha);
+    echo "<hr>";
+
+// Senhas seguras com password_hash ()
+    $senha = "1234567";
+    $senha_db = '$2y$10$0pyNBnHioXq7TVSscWtG2u0gDR/3EvRFRZ7VXoufSQ9q7h7Hcetmu';
+    // quanto maior o custo, mais seguro será o hash em contra partida consome mais recursos.
+    $options = [
+              'cost' => 10,
+    ];
+    $senhaSegura = password_hash($senha, PASSWORD_DEFAULT, $options);
+
+    // echo $senhaSegura;
+// Autenticação com password_hash
+    if (password_verify($senha, $senha_db)) {
+        echo "Senha válida";
+    } else {
+        echo "Senha inválida";
+    }

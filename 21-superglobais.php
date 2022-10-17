@@ -26,5 +26,4 @@
     echo "<hr>";
 // $_REQUEST
 // $_ENV
-// $_COOKIE
 

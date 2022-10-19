@@ -7,12 +7,22 @@ class login {
 // Privados
     private $email;
     private $senha;
+    private $nome;
+// Constructor nada mais é do que um método
+    public function __construct($email, $senha, $nome) {
+        $this -> nome = $nome;
+        $this -> setEmail($email);
+        $this -> setSenha($senha);
+    }
 
-// Getters  metodo que vai pegar um valor
+    public function getNome(){
+        return $this -> nome;
+    }
+// Getters  método que vai pegar um valor
     public function getEmail() {
         return $this -> email;
     }
-// Setters metodo que vai setar o valor ao atributo (precisa passar um parâmetro)
+// Setters método que vai setar o valor ao atributo (precisa passar um parâmetro)
     public function setEmail($e) {
     // Filtrar os dados
         $email = filter_var($e, FILTER_SANITIZE_EMAIL);
@@ -35,13 +45,13 @@ class login {
         }
     }
 }
-
-$logar = new Login();
+// O construtor é inicializado no momento em que estânciamos uma classe
+$logar = new Login("teste@teste.com", "123456", "Rodrigo Oliveira");
 // $logar -> email = "teste@teste.com"; (public)
-$logar -> setEmail("teste@teste.com"); // (private)
+// $logar -> setEmail("teste()/@teste.com"); (private)
 // $logar -> senha = "123456"; (public)
-$logar -> setSenha("123456"); // (private)
+// $logar -> setSenha("123456"); (private)
 $logar -> Logar();
 echo "<br>";
 // Para pegar um valor
-echo $logar -> getEmail();
+echo $logar -> getNome();

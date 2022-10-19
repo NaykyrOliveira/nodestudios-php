@@ -1,4 +1,5 @@
 <?php
+// Getters e Setters
 class login {
 // Publicos
    /* public $email;

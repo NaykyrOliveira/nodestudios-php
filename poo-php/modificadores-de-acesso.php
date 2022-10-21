@@ -9,11 +9,20 @@ private - ao contrário do public, esse modificador faz com que qualquer método
 
 class Veiculo {
     // protected $modelo;
-    private $modelo;
+    // private $modelo;
+    public $modelo;
     public $cor;
     public $ano;
 
-    public function Andar() {
+    /*public function Andar() {
+        echo "Andou";
+    }*/
+
+    /*private function Andar() {
+        echo "Andou";
+    }*/
+
+    protected function Andar() {
         echo "Andou";
     }
 
@@ -21,18 +30,23 @@ class Veiculo {
         echo "Parou";
     }
 
-    public function setModelo($m) {
+
+    /*public function setModelo($m) {
         $this -> modelo = $m;
     }
 
     public function getModelo () {
         return $this -> modelo;
-    }
+    }*/
 }
 
 class carro extends Veiculo {
     public function ligarLimpador() {
         echo "Limpando em 321";
+    }
+    
+    public function mostrarAcao() {
+        $this -> Andar();
     }
 }
 
@@ -42,7 +56,11 @@ class Moto extends Veiculo {
     }
 }
 
-$veiculo = new Veiculo();
+$carro = new Carro();
+// $carro = new Veiculo();
+$carro -> mostrarAcao();
+
+/*$veiculo = new Veiculo();
 $veiculo -> setModelo("Hilux");
-echo $veiculo -> getModelo();
+echo $veiculo -> getModelo();*/
 
